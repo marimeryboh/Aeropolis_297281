@@ -182,19 +182,16 @@ By comparing baseline performances and applying optimization techniques, we aime
 - **Model Performance Comparison:** Bar chart showing RMSE and R² for each model:
   ![Model Performance Comparison](images/model_metrics.png "Model Evaluation Metrics Comparison")
 
-- **Predicted vs. Actual Values:** Scatter plot of predicted vs actual cargo capacities:
-  ![Predicted vs Actual](images/predicted_vs_actual.png "Predicted vs Actual Cargo Capacities")
-
 ### Model Performance
 The comparison of regression models reveals the following performance metrics:
 
-| Model                   | MAE (Train) | RMSE (Train) | R² (Train) | MAE (Test) | RMSE (Test) | R² (Test) |
-|-------------------------|-------------|--------------|------------|------------|-------------|-----------|
-| Linear Regression       | 0.7552      | 0.9399       | 0.6923     | 0.7535     | 0.9392      | 0.6937    |
-| Random Forest           | 0.2838      | 0.3577       | 0.9554     | 0.7651     | 0.9566      | 0.6822    |
-| Random Forest Tuned     | 0.7750      | 0.9677       | 0.6739     | 0.7778     | 0.9723      | 0.6717    |
-| Hist Gradient Boosting  | 0.7541      | 0.9386       | 0.6932     | 0.7538     | 0.9396      | 0.6934    |
-| Hist Gradient Boosting Tuned | 0.7541      | 0.9386       | 0.6932     | 0.7538     | 0.9396      | 0.6934    |
+| Model                   | MAE (Test) | RMSE (Test) | R² (Test) |
+|-------------------------|-------------|--------------|------------|
+| Linear Regression       | 0.7535     | 0.9392      | 0.6937    |
+| Random Forest           | 0.7651     | 0.9566      | 0.6822    |
+| Random Forest Tuned     | 0.7778     | 0.9723      | 0.6717    |
+| Hist Gradient Boosting  | 0.7538     | 0.9396      | 0.6934    |
+| Hist Gradient Boosting Tuned | 0.7538     | 0.9396      | 0.6934    |
 
 
 ### Insights
