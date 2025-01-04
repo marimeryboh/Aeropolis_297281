@@ -57,17 +57,16 @@ Faced with this challenge, we sought an alternative solution. After examining th
 Based on this analysis, we decided to handle missing values by imputing numerical columns with their median and categorical columns with their mode. However, for the Cargo_Capacity_Column, which serves as the target variable, we opted not to apply imputation, as maintaining accuracy in this column is critical, we've just decided to erase all the missing values of this column.
 
 ### Preprocessing
+**Feature Encoding**:
+Applied one-hot encoding for categorical features such as `Weather_Status` and `Terrain_Type`.
+-> SILUPPA FACENDO UNA FRASE MIGLORE 
 
-The preprocessing steps included:
-1. **Outlier Removal**:
-   - Removed extreme values in `Cargo_Capacity_kg` and `Flight_Duration_Minutes` based on interquartile ranges.
-2. **Missing Value Imputation**:
-   - Used mode for categorical variables like `Package_Type` and median for numerical ones.
-3. **Feature Encoding**:
-   - Applied one-hot encoding for categorical features such as `Weather_Status` and `Terrain_Type`.
-4. **Feature Scaling**:
-   - Standardized numerical variables to ensure compatibility with regression algorithms.
+FEATURE CORRELATION CON LE DUE CORRELATION MATRIX + SPIEGALE 
 
+WE KEEP ONLU THE RELEVANT FEATURES --> MI APPLIED WHEN MI = 0 -> REMOVE THE FEAUTRE -> SPEIGA LOBBIETTIVO DI QEUSTO PROCESSO
+
+
+RESTO NON HO TROPPO LETTO MA CERCA DI SEGUIRE LA STRUTTURA DI QEULLO CHE TI AVEVO DETTO PSECIFICANDO BENE LE COSE FACENDO FRASI CHE SPIEGANO IL CONCETTO. 
 ### Dataset Splitting
 - **Training Set**: 80%
 - **Testing Set**: 20%
@@ -186,12 +185,17 @@ By comparing baseline performances and applying optimization techniques, we aime
 - **Predicted vs. Actual Values:** Scatter plot of predicted vs actual cargo capacities:
   ![Predicted vs Actual](images/predicted_vs_actual.png "Predicted vs Actual Cargo Capacities")
 
-### Model Performance Table
-| Model              | RMSE   | R²   |
-|--------------------|--------|-------|
-| Linear Regression  | 0.939  | 0.694 |
-| Random Forest      | 0.957  | 0.682 |
-| Gradient Boosting  | 0.939  | 0.693 |
+### Model Performance
+The comparison of regression models reveals the following performance metrics:
+
+| Model                   | MAE (Train) | RMSE (Train) | R² (Train) | MAE (Test) | RMSE (Test) | R² (Test) |
+|-------------------------|-------------|--------------|------------|------------|-------------|-----------|
+| Linear Regression       | 0.7552      | 0.9399       | 0.6923     | 0.7535     | 0.9392      | 0.6937    |
+| Random Forest           | 0.2838      | 0.3577       | 0.9554     | 0.7651     | 0.9566      | 0.6822    |
+| Random Forest Tuned     | 0.7750      | 0.9677       | 0.6739     | 0.7778     | 0.9723      | 0.6717    |
+| Hist Gradient Boosting  | 0.7541      | 0.9386       | 0.6932     | 0.7538     | 0.9396      | 0.6934    |
+| Hist Gradient Boosting Tuned | 0.7541      | 0.9386       | 0.6932     | 0.7538     | 0.9396      | 0.6934    |
+
 
 ### Insights
 Linear Regression emerged as the best model due to its simplicity, computational efficiency, and comparable accuracy to more complex models. It is especially suitable for scenarios requiring interpretable models and faster computations.
