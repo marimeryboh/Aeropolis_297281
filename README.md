@@ -40,9 +40,8 @@ We've also focused on understanding the distribution of both numerical and categ
 
 ![PHOTO-2025-01-05-17-37-15](https://github.com/user-attachments/assets/2675b8c0-eacf-4656-9db1-68a08f9ee17a)
 
+![PHOTO-2025-01-05-17-37-34](https://github.com/user-attachments/assets/adab6640-2677-489e-8f12-7b12bf11a8b3)
 
-
-# METTRE IMMAGINE
 
 ### Identification of Anomalies
 
@@ -62,7 +61,9 @@ We then checked for missing values in the dataset and visualized the results to 
 # IMMAGE
 At the beginning of our preprocessing, we attempted to fill missing values using the K-Nearest Neighbors (KNN) imputation method. While this algorithm is effective in many scenarios, it proved to be too slow for our dataset due to the large volume of missing values and the associated computational complexity.
 Faced with this challenge, we sought an alternative solution. After examining the correlation of missing values across features, we concluded that the missing data appeared independently in each column. This observation indicates that the dataset follows a Missing Completely at Random (MCAR) pattern.
-# IMMAGE
+
+![PHOTO-2025-01-05-17-38-04](https://github.com/user-attachments/assets/640bbe05-0477-4e71-a593-aecb6663e11e)
+
 Based on this analysis, we decided to handle missing values by imputing numerical columns with their median and categorical columns with their mode. However, for the Cargo_Capacity_Column, which serves as the target variable, we opted not to apply imputation, as maintaining accuracy in this column is critical, we've just decided to erase all the missing values of this column.
 
 **Feature Encoding**
@@ -75,6 +76,9 @@ Two correlation matrices were computed to identify relationships between feature
 
 The second heatmap highlights the futures with the stronger relationships with the target. Features with negligible correlations, such as *Route_Optimization_Per_Second* and *Flight_Zone_North*, were marked for potential removal but since we aren't in a linear relationship correlation, we must use other techinques to analyze the relationship between the values, and calculate how important each feature is in predicting Cargo_Capacity_kg. 
 --> modificare 
+
+![PHOTO-2025-01-05-17-38-23](https://github.com/user-attachments/assets/ff9860f9-de6f-40b0-95b8-e46b9715a546)
+
 
 **Feature Selection via Mutual Information**
 
@@ -122,7 +126,7 @@ Hyperparameter tuning was performed to enhance model performance, focusing on Ra
 
 **Comparative Analysis of Time Complexity Across the Models**
 
-## IMMAGE
+![Unknown](https://github.com/user-attachments/assets/4c1adfca-a1e2-4fd5-8d6c-93612d68f253)
 
 **Performance Metrics Comparison**
 
@@ -136,7 +140,6 @@ The comparison of regression models reveals the following performance metrics:
 | Hist Gradient Boosting  | 0.7538     | 0.9396      | 0.6934    |
 | Hist Gradient Boosting Tuned | 0.7538     | 0.9396      | 0.6934    |
 
-## IMMAGE
 
 **Main Findings**
 
@@ -152,5 +155,4 @@ The comparison of regression models reveals the following performance metrics:
 2. **Hist Gradient Boosting is a Strong Alternative**: With comparable performance to Linear Regression, it showcases robustness and generalization capabilities.
 3. **Random Forest Requires Further Tuning**: Its overfitting tendencies limit its generalizability to unseen data.
 
-
-### MANCA IMMAGINE
+![Unknown](https://github.com/user-attachments/assets/90a6ce5c-dcf3-44ba-a114-e00d0cd9f93b)
