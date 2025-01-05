@@ -29,8 +29,6 @@ The EDA started with a thorough examination of the dataset, focusing on understa
 
 The Aeropolis dataset comprises 20 features that span environmental, operational, and logistical factors. Below is a preview of the dataset used in this project:
 
-![Dataset Preview](images/dataset_preview.png "Dataset Preview")
-
 Therefore it consists of:
 
 - **Target Variable**: `Cargo_Capacity_kg` (continuous).
