@@ -47,7 +47,10 @@ Additionally, our analysis revealed that features such as Cargo_Capacity_kg, Rou
 
 Lastly, the column Flight_Duration_Minutes was found to contain Boolean values, which is clearly incorrect since it should represent numerical data. Given that this column was not providing meaningful insights and was irreparably flawed, we decided to remove it from the dataset entirely.
 
-### Filling Missing Data
+### Preprocessing
+
+**Filling Missing Data**
+
 We then checked for missing values in the dataset and visualized the results to conduct a thorough analysis. Our findings revealed that nearly 10% of all features contained missing values, which could pose significant challenges during model training.
 # IMMAGE
 At the beginning of our preprocessing, we attempted to fill missing values using the K-Nearest Neighbors (KNN) imputation method. While this algorithm is effective in many scenarios, it proved to be too slow for our dataset due to the large volume of missing values and the associated computational complexity.
@@ -55,7 +58,6 @@ Faced with this challenge, we sought an alternative solution. After examining th
 # IMMAGE
 Based on this analysis, we decided to handle missing values by imputing numerical columns with their median and categorical columns with their mode. However, for the Cargo_Capacity_Column, which serves as the target variable, we opted not to apply imputation, as maintaining accuracy in this column is critical, we've just decided to erase all the missing values of this column.
 
-### Preprocessing
 **Feature Encoding**
 
 To prepare the dataset for analysis, categorical variables were transformed using one-hot encoding. This technique created binary columns for each unique category, ensuring compatibility with machine learning models. The final dataset contained 34 features, ready for further analysis.
@@ -63,8 +65,8 @@ To prepare the dataset for analysis, categorical variables were transformed usin
 **Correlation Analysis**
 Two correlation matrices were computed to identify relationships between features and the target variable, `Cargo_Capacity_kg`⁠. 
 
-
 The second heatmap highlights the futures with the stronger relationships with the target. Features with negligible correlations, such as *Route_Optimization_Per_Second* and *Flight_Zone_North*, were marked for potential removal but since we aren't in a linear relationship correlation, we must use other techinques to analyze the relationship between the values, and calculate how important each feature is in predicting Cargo_Capacity_kg. 
+--> modificare 
 
 **Feature Selection via Mutual Information**
 Therefore, to complement correlation analysis, we applied Mutual Information (MI) to evaluate feature importance. Unlike correlation, MI measures both linear and non-linear dependencies, offering a holistic view of feature relevance.
@@ -74,7 +76,6 @@ Features with MI scores of 0 were deemed irrelevant and removed. This step ensur
 **Dataset Splitting, Scaling, and Reflection**
 
 After feature selection, the dataset was divided into training and test subsets using an 80/20 split, this is important to avoid overfitting. Standard scaling was than applied to standardize the magnitude of features, ensuring uniformity and compatibility with machine learning algorithms.
-
 
 ##  Experimental Design 🔬
 
@@ -98,25 +99,23 @@ To predict the continuous target variable ⁠ Cargo_Capacity_kg ⁠, regress
 3.⁠ ⁠**Hist Gradient Boosting**:
    - A gradient boosting algorithm optimized for large datasets.
    - Performed consistently across training and test sets with an MAE of approximately 0.754, demonstrating strong generalization capabilities.
+   - 
 ---
+
 **Hyperparameter Optimization**
 
 Hyperparameter tuning was performed to enhance model performance, focusing on Random Forest and Hist Gradient Boosting. Using ⁠ RandomizedSearchCV ⁠, key hyperparameters such as the number of estimators, maximum depth, and learning rate were optimized:
 
 •⁠  ⁠For *Random Forest*, the best configuration reduced overfitting, aligning test performance closer to training results.
 •⁠  ⁠For *Hist Gradient Boosting*, fine-tuning further improved generalization, achieving nearly identical results on both training and test datasets.
+
 ---
-### Results
+
+## Results 👩‍🏫
 
 **Comparative Analysis of Time Complexity Across the Models**
 
 ## IMMAGE
-
-This bar chart shows:
-
-•⁠  ⁠*Random Forest Tuned* require the longest execution time due to extensive hyperparameter tuning.
-•⁠  ⁠*Hist Gradient Boosting* and *Hist Gradient Boosting Tuned* are computationally efficient, requiring less time compared to Random Forest.
-•⁠  ⁠*Linear Regression* had the shortest execution time, reflecting its simplicity and lack of complexity in computation.
 
 **Performance Metrics Comparison**
 The comparison of regression models reveals the following performance metrics:
@@ -129,10 +128,9 @@ The comparison of regression models reveals the following performance metrics:
 | Hist Gradient Boosting  | 0.7538     | 0.9396      | 0.6934    |
 | Hist Gradient Boosting Tuned | 0.7538     | 0.9396      | 0.6934    |
 
-To evaluate the models, Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and R-squared (R²) metrics were compared:
 ## IMMAGE
 
-### Main Findings
+**Main Findings**
 1.⁠ ⁠*Linear Regression* achieved a balanced trade-off between simplicity, computational efficiency, and predictive performance. Emerging as the best model.
 
 2.⁠ ⁠While *Gradient Boosting* and *Random Forest* demonstrated slightly higher train-set performance, Linear Regression performed equivalently or better on the test set, ensuring its robustness against overfitting.
