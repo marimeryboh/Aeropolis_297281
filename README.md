@@ -79,8 +79,13 @@ Two correlation matrices were computed to identify relationships between feature
 # Una ocrrelation matrix 
 The second heatmap highlights the futures with the stronger relationships with the target. Features with negligible correlations, such as *Route_Optimization_Per_Second* and *Flight_Zone_North*, were marked for potential removal but since we aren't in a linear relationship correlation, we must use other techinques to analyze the relationship between the values, and calculate how important each feature is in predicting Cargo_Capacity_kg. 
 --> modificare 
+
+![Unknown](https://github.com/user-attachments/assets/932d364c-3a13-4b07-b11b-2c92b5f9f3f9)
+
+
 # alra 
 
+![Unknown](https://github.com/user-attachments/assets/f79afde5-8b0e-45a4-bf24-bb9ac10d991c)
 
 
 **Feature Selection via Mutual Information**
