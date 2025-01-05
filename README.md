@@ -47,7 +47,7 @@ Additionally, our analysis revealed that features such as Cargo_Capacity_kg, Rou
 
 Lastly, the column Flight_Duration_Minutes was found to contain Boolean values, which is clearly incorrect since it should represent numerical data. Given that this column was not providing meaningful insights and was irreparably flawed, we decided to remove it from the dataset entirely.
 
-### Preprocessing
+## Preprocessing 👷‍♀️
 
 **Filling Missing Data**
 
