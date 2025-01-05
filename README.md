@@ -38,6 +38,10 @@ Therefore it consists of:
 
 We've also focused on understanding the distribution of both numerical and categorical variables. These univariate analyses provided valuable insights, revealing multimodal distributions in some variables and skewed distributions in others. Additionally, this analysis informed our strategy for imputing missing values later in the data preprocessing pipeline.
 
+![PHOTO-2025-01-05-17-37-15](https://github.com/user-attachments/assets/2675b8c0-eacf-4656-9db1-68a08f9ee17a)
+
+
+
 # METTRE IMMAGINE
 
 ### Identification of Anomalies
