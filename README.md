@@ -24,6 +24,7 @@ The results will enable Aeropolis to continue leading the way in futuristic logi
 Our project began with a thorough analysis of the Aeropolis dataset, employing Python and its powerful ecosystem of libraries such as Pandas, NumPy, Scikit-learn, Matplotlib, and Seaborn. This exploratory phase was essential for understanding the dataset’s unique characteristics, including the distribution of key variables and its structure. It has permitted to laid a strong foundation for predictive modeling.
 
 ### Dataset Analysis
+
 The EDA started with a thorough examination of the dataset, focusing on understanding its structure, the distribution of variables, checked for anomalies, and any initial trends or patterns.
 
 The Aeropolis dataset comprises 20 features that span environmental, operational, and logistical factors. Below is a preview of the dataset used in this project:
@@ -31,6 +32,7 @@ The Aeropolis dataset comprises 20 features that span environmental, operational
 ![Dataset Preview](images/dataset_preview.png "Dataset Preview")
 
 Therefore it consists of:
+
 - **Target Variable**: `Cargo_Capacity_kg` (continuous).
 - **Features**: Numerical (e.g., `Flight_Hours`, `Vertical_Max_Speed`) and categorical (e.g., `Weather_Status`, `Package_Type`).
 
@@ -39,6 +41,7 @@ We've also focused on understanding the distribution of both numerical and categ
 # METTRE IMMAGINE
 
 ### Identification of Anomalies
+
 During the initial Exploratory Data Analysis (EDA), we identified several anomalies within the dataset. 
 
 One notable issue, as we've prevusly said, was that the feature Cleaning_Liquid_Usage_liters exhibited a significant right skew. This skewness led to an imbalance in the dataset, adversely impacting the performance of our models.
@@ -63,12 +66,14 @@ Based on this analysis, we decided to handle missing values by imputing numerica
 To prepare the dataset for analysis, categorical variables were transformed using one-hot encoding. This technique created binary columns for each unique category, ensuring compatibility with machine learning models. The final dataset contained 34 features, ready for further analysis.
 
 **Correlation Analysis**
+
 Two correlation matrices were computed to identify relationships between features and the target variable, `Cargo_Capacity_kg`⁠. 
 
 The second heatmap highlights the futures with the stronger relationships with the target. Features with negligible correlations, such as *Route_Optimization_Per_Second* and *Flight_Zone_North*, were marked for potential removal but since we aren't in a linear relationship correlation, we must use other techinques to analyze the relationship between the values, and calculate how important each feature is in predicting Cargo_Capacity_kg. 
 --> modificare 
 
 **Feature Selection via Mutual Information**
+
 Therefore, to complement correlation analysis, we applied Mutual Information (MI) to evaluate feature importance. Unlike correlation, MI measures both linear and non-linear dependencies, offering a holistic view of feature relevance.
 
 Features with MI scores of 0 were deemed irrelevant and removed. This step ensured that the dataset was streamlined, retaining only impactful variables. By removing irrelevant features, we reduced noise, risks of overfitting, and allows models to focus on the most relevant variables, enhancing both interpretability and performance.
@@ -80,6 +85,7 @@ After feature selection, the dataset was divided into training and test subsets 
 ##  Experimental Design 🔬
 
 ### Main Purpose
+
 The primary goal of this project is to evaluate the performance of various machine learning models in predicting drone cargo capacity. Specific objectives include:
 •⁠  ⁠Identifying the best-performing model in terms of accuracy and computational efficiency.
 •⁠  ⁠Exploring the impact of preprocessing techniques on model performance.
@@ -115,6 +121,7 @@ Hyperparameter tuning was performed to enhance model performance, focusing on Ra
 ## IMMAGE
 
 **Performance Metrics Comparison**
+
 The comparison of regression models reveals the following performance metrics:
 
 | Model                   | MAE (Test) | RMSE (Test) | R² (Test) |
@@ -128,6 +135,7 @@ The comparison of regression models reveals the following performance metrics:
 ## IMMAGE
 
 **Main Findings**
+
 1.⁠ ⁠*Linear Regression* achieved a balanced trade-off between simplicity, computational efficiency, and predictive performance. Emerging as the best model.
 
 2.⁠ ⁠While *Gradient Boosting* and *Random Forest* demonstrated slightly higher train-set performance, Linear Regression performed equivalently or better on the test set, ensuring its robustness against overfitting.
@@ -135,6 +143,7 @@ The comparison of regression models reveals the following performance metrics:
 ## Conclusions 🖋️
 
 ### Key Takeaways:
+
 1. **Linear Regression Outperforms Other Models**: Across all metrics (MAE, RMSE, R²), Linear Regression consistently demonstrated the best performance, highlighting its suitability for this dataset.
 2. **Hist Gradient Boosting is a Strong Alternative**: With comparable performance to Linear Regression, it showcases robustness and generalization capabilities.
 3. **Random Forest Requires Further Tuning**: Its overfitting tendencies limit its generalizability to unseen data.
