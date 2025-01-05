@@ -100,7 +100,6 @@ To predict the continuous target variable ⁠ Cargo_Capacity_kg ⁠, regress
    - A gradient boosting algorithm optimized for large datasets.
    - Performed consistently across training and test sets with an MAE of approximately 0.754, demonstrating strong generalization capabilities.
    - 
----
 
 **Hyperparameter Optimization**
 
@@ -108,8 +107,6 @@ Hyperparameter tuning was performed to enhance model performance, focusing on Ra
 
 •⁠  ⁠For *Random Forest*, the best configuration reduced overfitting, aligning test performance closer to training results.
 •⁠  ⁠For *Hist Gradient Boosting*, fine-tuning further improved generalization, achieving nearly identical results on both training and test datasets.
-
----
 
 ## Results 👩‍🏫
 
@@ -142,6 +139,5 @@ The comparison of regression models reveals the following performance metrics:
 2. **Hist Gradient Boosting is a Strong Alternative**: With comparable performance to Linear Regression, it showcases robustness and generalization capabilities.
 3. **Random Forest Requires Further Tuning**: Its overfitting tendencies limit its generalizability to unseen data.
 
----
 
 ### MANCA IMMAGINE
