@@ -58,11 +58,13 @@ Lastly, the column Flight_Duration_Minutes was found to contain Boolean values, 
 **Filling Missing Data**
 
 We then checked for missing values in the dataset and visualized the results to conduct a thorough analysis. Our findings revealed that nearly 10% of all features contained missing values, which could pose significant challenges during model training.
-# IMMAGE
+
+![PHOTO-2025-01-05-17-38-04](https://github.com/user-attachments/assets/640bbe05-0477-4e71-a593-aecb6663e11e)
+
 At the beginning of our preprocessing, we attempted to fill missing values using the K-Nearest Neighbors (KNN) imputation method. While this algorithm is effective in many scenarios, it proved to be too slow for our dataset due to the large volume of missing values and the associated computational complexity.
 Faced with this challenge, we sought an alternative solution. After examining the correlation of missing values across features, we concluded that the missing data appeared independently in each column. This observation indicates that the dataset follows a Missing Completely at Random (MCAR) pattern.
 
-![PHOTO-2025-01-05-17-38-04](https://github.com/user-attachments/assets/640bbe05-0477-4e71-a593-aecb6663e11e)
+![PHOTO-2025-01-05-17-38-23](https://github.com/user-attachments/assets/ff9860f9-de6f-40b0-95b8-e46b9715a546)
 
 Based on this analysis, we decided to handle missing values by imputing numerical columns with their median and categorical columns with their mode. However, for the Cargo_Capacity_Column, which serves as the target variable, we opted not to apply imputation, as maintaining accuracy in this column is critical, we've just decided to erase all the missing values of this column.
 
@@ -74,10 +76,11 @@ To prepare the dataset for analysis, categorical variables were transformed usin
 
 Two correlation matrices were computed to identify relationships between features and the target variable, `Cargo_Capacity_kg`⁠. 
 
+# Una ocrrelation matrix 
 The second heatmap highlights the futures with the stronger relationships with the target. Features with negligible correlations, such as *Route_Optimization_Per_Second* and *Flight_Zone_North*, were marked for potential removal but since we aren't in a linear relationship correlation, we must use other techinques to analyze the relationship between the values, and calculate how important each feature is in predicting Cargo_Capacity_kg. 
 --> modificare 
+# alra 
 
-![PHOTO-2025-01-05-17-38-23](https://github.com/user-attachments/assets/ff9860f9-de6f-40b0-95b8-e46b9715a546)
 
 
 **Feature Selection via Mutual Information**
