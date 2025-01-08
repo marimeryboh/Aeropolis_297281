@@ -102,26 +102,25 @@ The primary goal of this project is to evaluate the performance of various machi
 
 **Regression Models**
 
-To predict the continuous target variable ⁠`Cargo_Capacity_kg`⁠, regression analysis was employed. Three machine learning algorithms were implemented:
+To predict the continuous target variable ⁠`Cargo_Capacity_kg`⁠, regression analysis was employed, since our aim is to predict continuous outcomes based on input features. 
+
+Three machine learning algorithms were implemented:
 
 1.⁠ ⁠**Linear Regression**:
    - A baseline model chosen for its simplicity and interpretability.
-   - Results showed a Mean Absolute Error (MAE) of 0.7552 on the training set, indicating reasonable predictive capability but limited flexibility in capturing complex patterns.
 
 2.⁠ ⁠**Random Forest**:
    - A robust ensemble model capable of capturing non-linear relationships.
-   - Achieved a training MAE of 0.2838 but exhibited slight overfitting, as the test MAE increased to 0.7651.
 
 3.⁠ ⁠**Hist Gradient Boosting**:
    - A gradient boosting algorithm optimized for large datasets.
-   - Performed consistently across training and test sets with an MAE of approximately 0.754, demonstrating strong generalization capabilities.
 
 **Hyperparameter Optimization**
 
 Hyperparameter tuning was performed to enhance model performance, focusing on Random Forest and Hist Gradient Boosting. Using ⁠ RandomizedSearchCV ⁠, key hyperparameters such as the number of estimators, maximum depth, and learning rate were optimized:
 
-•⁠  ⁠For *Random Forest*, the best configuration reduced overfitting, aligning test performance closer to training results.
-•⁠  ⁠For *Hist Gradient Boosting*, fine-tuning further improved generalization, achieving nearly identical results on both training and test datasets.
+•⁠  ⁠For **Random Forest**, the best configuration reduced overfitting, aligning test performance closer to training results.
+•⁠  ⁠For **Hist Gradient Boosting**, fine-tuning further improved generalization, achieving nearly identical results on both training and test datasets.
 
 ## Results 👩‍🏫
 
@@ -144,9 +143,9 @@ The comparison of regression models reveals the following performance metrics:
 
 **Main Findings**
 
-1.⁠ ⁠*Linear Regression* achieved a balanced trade-off between simplicity, computational efficiency, and predictive performance. Emerging as the best model.
+1.⁠ ⁠**Linear Regression** achieved a balanced trade-off between simplicity, computational efficiency, and predictive performance. Emerging as the best model.
 
-2.⁠ ⁠While *Gradient Boosting* and *Random Forest* demonstrated slightly higher train-set performance, Linear Regression performed equivalently or better on the test set, ensuring its robustness against overfitting.
+2.⁠ ⁠While **Gradient Boosting** and **Random Forest** demonstrated slightly higher train-set performance, Linear Regression performed equivalently or better on the test set, ensuring its robustness against overfitting.
 
 ## Conclusions 🖋️
 
