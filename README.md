@@ -62,7 +62,8 @@ We then checked for missing values in the dataset and visualized the results to 
 At the beginning of our preprocessing, we attempted to fill missing values using the K-Nearest Neighbors (KNN) imputation method. While this algorithm is effective in many scenarios, it proved to be too slow for our dataset due to the large volume of missing values and the associated computational complexity.
 Faced with this challenge, we sought an alternative solution. After examining the correlation of missing values across features, we concluded that the missing data appeared independently in each column. This observation indicates that the dataset follows a Missing Completely at Random (MCAR) pattern.
 
-![PHOTO-2025-01-05-17-38-23](https://github.com/user-attachments/assets/ff9860f9-de6f-40b0-95b8-e46b9715a546)
+![Unknown](https://github.com/user-attachments/assets/1af660c8-258d-4f69-a630-44da6cf77b4f)
+
 
 Based on this analysis, we decided to handle missing values by imputing numerical columns with their median and categorical columns with their mode. However, for the Cargo_Capacity_Column, which serves as the target variable, we opted not to apply imputation, as maintaining accuracy in this column is critical, we've just decided to erase all the missing values of this column.
 
