@@ -45,7 +45,7 @@ We've also focused on understanding the distribution of both numerical and categ
 
 During the initial Exploratory Data Analysis (EDA), we identified several anomalies within the dataset. 
 
-One notable issue, as we've prevusly said, was that the feature `Cleaning_Liquid_Usage_liters` exhibited a significant right skew. This skewness led to an imbalance in the dataset, adversely impacting the performance of our models.
+One notable issue, was that the feature `Cleaning_Liquid_Usage_liters` exhibited a significant right skew. This skewness led to an imbalance in the dataset, adversely impacting the performance of our models.
 
 Additionally, our analysis revealed that features such as `Cargo_Capacity_kg`, `Route_Optimization_Per_Second`, and `Water_Usage_liters` contained negative values. These are logically implausible, as such variables can't assume negative values in real-world scenarios. To address this inconsistency, we decided to replace these erroneous values with NaN. This approach aligns with our data preprocessing pipeline, which includes systematic handling of missing values later in the workflow.
 
