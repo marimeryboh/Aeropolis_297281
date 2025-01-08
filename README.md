@@ -6,7 +6,7 @@
 
 ## Introduction 🖍️
 
-In the futuristic city of Aeropolis, autonomous delivery drones are revolutionizing the way goods are transported across the sprawling metropolis, ensuring fast and efficient delivery. These drones play a pivotal role in maintaining the city's dynamic pace, with their performance evaluated by the amount of cargo they can deliver per flight. However, optimizing drone performance is no simple task, as it depends on a multitude of factors, including weather conditions, flight altitude, terrain type, and other operational variables.
+In the futuristic city of Aeropolis, autonomous delivery drones are revolutionizing the way goods are transported across the sprawling metropolis, ensuring fast and efficient delivery. These drones play a pivotal role in maintaining the city's dynamic pace, with their performance evaluated by the amount of cargo they can deliver per flight. However, optimizing drone performance is no simple task, as a multitude of factors influence it, including weather conditions, flight altitude, terrain type, and other operational variables.
 
 Therefore our project addresses the challenge of optimizing drone logistics in Aeropolis by predicting cargo capacity under diverse conditions, thereby improving delivery efficiency and resource utilization. By analyzing a rich dataset encompassing 20 variables, we seek to enhance drone performance, optimize resource allocation, and contribute to the development of smarter urban logistics solutions. 
 
@@ -21,7 +21,7 @@ The results will enable Aeropolis to continue leading the way in futuristic logi
 
 ## Methods 🔎
 
-Our project began with a thorough analysis of the Aeropolis dataset, employing Python and its powerful ecosystem of libraries such as Pandas, NumPy, Scikit-learn, Matplotlib, and Seaborn. This exploratory phase was essential for understanding the dataset’s unique characteristics, including the distribution of key variables and its structure. It has permitted to laid a strong foundation for predictive modeling.
+Our project began with a thorough analysis of the Aeropolis dataset, employing Python and its powerful ecosystem of libraries such as Pandas, NumPy, Scikit-learn, Matplotlib, and Seaborn. This exploratory phase was essential for understanding the dataset’s unique characteristics, including the distribution of key variables and its structure. It has allowed us to lay a strong foundation for predictive modeling.
 
 ### Dataset Analysis
 
@@ -47,7 +47,7 @@ During the initial Exploratory Data Analysis (EDA), we identified several anomal
 
 One notable issue, was that the feature `Cleaning_Liquid_Usage_liters` exhibited a significant right skew. This skewness led to an imbalance in the dataset, adversely impacting the performance of our models.
 
-Additionally, our analysis revealed that features such as `Cargo_Capacity_kg`, `Route_Optimization_Per_Second`, and `Water_Usage_liters` contained negative values. These are logically implausible, as such variables can't assume negative values in real-world scenarios. To address this inconsistency, we decided to replace these erroneous values with NaN. This approach aligns with our data preprocessing pipeline, which includes systematic handling of missing values later in the workflow.
+Additionally, our analysis revealed that features such as `Cargo_Capacity_kg`, `Route_Optimization_Per_Second` and `Water_Usage_liters` contained negative values. These are logically implausible, as such variables can't assume negative values in real-world scenarios. To address this inconsistency, we decided to replace these erroneous values with NaN. This approach aligns with our data preprocessing pipeline, which includes systematic handling of missing values later in the workflow.
 
 Lastly, the column `Flight_Duration_Minutes` was found to contain Boolean values, which is clearly incorrect since it should represent numerical data. Given that this column was not providing meaningful insights and was irreparably flawed, we decided to remove it from the dataset entirely.
 
@@ -59,8 +59,8 @@ We then checked for missing values in the dataset and visualized the results to 
 
 ![PHOTO-2025-01-05-17-38-04](https://github.com/user-attachments/assets/640bbe05-0477-4e71-a593-aecb6663e11e)
 
-At the beginning of our preprocessing, we attempted to fill missing values using the K-Nearest Neighbors (KNN) imputation method. While this algorithm is effective in many scenarios, it proved to be too slow for our dataset due to the large volume of missing values and the associated computational complexity.
-Faced with this challenge, we sought an alternative solution. After examining the correlation of missing values across features, we concluded that the missing data appeared independently in each column. This observation indicates that the dataset follows a Missing Completely at Random (MCAR) pattern.
+We initially attempted to use the K-Nearest Neighbors (KNN) imputation method. While this algorithm is effective in many scenarios, it proved to be too slow for our dataset due to the large volume of missing values and the associated computational complexity.
+Given this challenge, we sought an alternative solution. After examining the correlation of missing values across features, we concluded that the missing data appeared independently in each column. This observation indicates that the dataset follows a Missing Completely at Random (MCAR) pattern.
 
 ![Unknown](https://github.com/user-attachments/assets/1af660c8-258d-4f69-a630-44da6cf77b4f)
 
@@ -98,13 +98,13 @@ After feature selection, the dataset was divided into training and test subsets 
 
 The primary goal of this project is to evaluate the performance of various machine learning models in predicting drone cargo capacity. Specific objectives include:
 -  ⁠Identifying the best-performing model in terms of accuracy and computational efficiency.
--  ⁠Exploring the impact of preprocessing techniques on model performance.
+-  Analyzing the impact of preprocessing techniques on model performance.
 
 **Regression Models**
 
-To predict the continuous target variable ⁠`Cargo_Capacity_kg`⁠, regression analysis was employed, since our aim is to predict continuous outcomes based on input features. 
+To predict the continuous target variable ⁠`Cargo_Capacity_kg`⁠, regression analysis was employed since our aim is to predict continuous outcomes based on input features. 
 
-Three machine learning algorithms were implemented:
+We implemented three machine learning algorithms:
 
 1.⁠ ⁠**Linear Regression**:
    - A baseline model chosen for its simplicity and interpretability.
@@ -143,7 +143,7 @@ The comparison of regression models reveals the following performance metrics:
 
 **Main Findings**
 
-1.⁠ ⁠**Linear Regression** achieved a balanced trade-off between simplicity, computational efficiency, and predictive performance. Emerging as the best model.
+1.⁠ ⁠**Linear Regression** achieved a balanced trade-off between simplicity, computational efficiency, and predictive performance. Which emerged as the best model.
 
 2.⁠ ⁠While **Gradient Boosting** and **Random Forest** demonstrated slightly higher train-set performance, Linear Regression performed equivalently or better on the test set, ensuring its robustness against overfitting.
 
@@ -151,11 +151,11 @@ The comparison of regression models reveals the following performance metrics:
 
 ### Key Takeaways:
 
-1. **Linear Regression Outperforms Other Models**: Across all metrics (MAE, RMSE, R²), Linear Regression consistently demonstrated the best performance, highlighting its suitability for this dataset.
+1. **Linear Regression Outperforms Other Models**: Across all metrics (MAE, RMSE, R²), Linear Regression consistently demonstrated the best performance, highlighting its effectiveness for this dataset.
 2. **Hist Gradient Boosting is a Strong Alternative**: With comparable performance to Linear Regression, it showcases robustness and generalization capabilities.
 3. **Random Forest Requires Further Tuning**: Its overfitting tendencies limit its generalizability to unseen data.
 
 ![Unknown](https://github.com/user-attachments/assets/90a6ce5c-dcf3-44ba-a114-e00d0cd9f93b)
 
 
-In conclusion, while we aimed to optimize the cargo capacity of drones in Aeropolis, we ended up realizing that the best way to carry weight isn’t just through drones... it's through the power of Linear Regression! Turns out, even in a futuristic world, sometimes the simplest approach still takes flight! ✈️
+In conclusion, while we aimed to optimize the cargo capacity of drones in Aeropolis, we ended up realizing that the best way to carry weight isn’t just through drones... it's through the power of Linear Regression! It turns out that even in a futuristic world, sometimes the simplest approach still takes flight! ✈️
