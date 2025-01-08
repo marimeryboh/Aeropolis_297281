@@ -158,4 +158,4 @@ The comparison of regression models reveals the following performance metrics:
 ![Unknown](https://github.com/user-attachments/assets/90a6ce5c-dcf3-44ba-a114-e00d0cd9f93b)
 
 
-In conclusion, while we aimed to optimize the cargo capacity of drones in Aeropolis, we ended up realizing that the best way to carry weight isn’t just through drones... it's through the power of Linear Regression! It turns out that even in a futuristic world, sometimes the simplest approach still takes flight! ✈️
+In conclusion, while we aimed to optimize the cargo capacity of drones in Aeropolis, we ended up realizing that the best way to carry weight isn’t just through drones... it's through the power of Linear Regression! It turns out that even in a futuristic world, sometimes the simplest approach... still takes flight! ✈️
