@@ -97,8 +97,8 @@ After feature selection, the dataset was divided into training and test subsets 
 ### Main Purpose
 
 The primary goal of this project is to evaluate the performance of various machine learning models in predicting drone cargo capacity. Specific objectives include:
-•⁠  ⁠Identifying the best-performing model in terms of accuracy and computational efficiency.
-•⁠  ⁠Exploring the impact of preprocessing techniques on model performance.
+-  ⁠Identifying the best-performing model in terms of accuracy and computational efficiency.
+-  ⁠Exploring the impact of preprocessing techniques on model performance.
 
 **Regression Models**
 
