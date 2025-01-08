@@ -45,11 +45,11 @@ We've also focused on understanding the distribution of both numerical and categ
 
 During the initial Exploratory Data Analysis (EDA), we identified several anomalies within the dataset. 
 
-One notable issue, as we've prevusly said, was that the feature 'Cleaning_Liquid_Usage_liters' exhibited a significant right skew. This skewness led to an imbalance in the dataset, adversely impacting the performance of our models.
+One notable issue, as we've prevusly said, was that the feature `Cleaning_Liquid_Usage_liters` exhibited a significant right skew. This skewness led to an imbalance in the dataset, adversely impacting the performance of our models.
 
-Additionally, our analysis revealed that features such as 'Cargo_Capacity_kg', 'Route_Optimization_Per_Second', and 'Water_Usage_liters' contained negative values. These are logically implausible, as such variables can't assume negative values in real-world scenarios. To address this inconsistency, we decided to replace these erroneous values with NaN. This approach aligns with our data preprocessing pipeline, which includes systematic handling of missing values later in the workflow.
+Additionally, our analysis revealed that features such as `Cargo_Capacity_kg`, `Route_Optimization_Per_Second`, and `Water_Usage_liters` contained negative values. These are logically implausible, as such variables can't assume negative values in real-world scenarios. To address this inconsistency, we decided to replace these erroneous values with NaN. This approach aligns with our data preprocessing pipeline, which includes systematic handling of missing values later in the workflow.
 
-Lastly, the column 'Flight_Duration_Minutes' was found to contain Boolean values, which is clearly incorrect since it should represent numerical data. Given that this column was not providing meaningful insights and was irreparably flawed, we decided to remove it from the dataset entirely.
+Lastly, the column `Flight_Duration_Minutes` was found to contain Boolean values, which is clearly incorrect since it should represent numerical data. Given that this column was not providing meaningful insights and was irreparably flawed, we decided to remove it from the dataset entirely.
 
 ## Preprocessing 👷‍♀️
 
@@ -65,7 +65,7 @@ Faced with this challenge, we sought an alternative solution. After examining th
 ![Unknown](https://github.com/user-attachments/assets/1af660c8-258d-4f69-a630-44da6cf77b4f)
 
 
-Based on this analysis, we decided to handle missing values by imputing numerical columns with their median and categorical columns with their mode. However, for the 'Cargo_Capacity_Column', which serves as the target variable, we opted not to apply imputation, as maintaining accuracy in this column is critical, we've just decided to erase all the missing values of this column.
+Based on this analysis, we decided to handle missing values by imputing numerical columns with their median and categorical columns with their mode. However, for the `Cargo_Capacity_Column`, which serves as the target variable, we opted not to apply imputation, as maintaining accuracy in this column is critical, we've just decided to erase all the missing values of this column.
 
 **Feature Encoding**
 
@@ -77,7 +77,7 @@ Two correlation matrices were computed to identify relationships between feature
 
 ![Unknown](https://github.com/user-attachments/assets/932d364c-3a13-4b07-b11b-2c92b5f9f3f9)
 
-The second heatmap highlights the futures with the stronger relationships with the target. Features with negligible correlations, such as '*Route_Optimization_Per_Second*' and '*Flight_Zone_North*', were marked for potential removal but we'll use other techinques to analyze the relationship between the values, and calculate how important each feature is in predicting 'Cargo_Capacity_kg'. 
+The second heatmap highlights the futures with the stronger relationships with the target. Features with negligible correlations, such as `*Route_Optimization_Per_Second*` and `*Flight_Zone_North*`, were marked for potential removal but we'll use other techinques to analyze the relationship between the values, and calculate how important each feature is in predicting `Cargo_Capacity_kg`. 
 
 
 ![Unknown](https://github.com/user-attachments/assets/f79afde5-8b0e-45a4-bf24-bb9ac10d991c)
@@ -102,7 +102,7 @@ The primary goal of this project is to evaluate the performance of various machi
 
 **Regression Models**
 
-To predict the continuous target variable ⁠'Cargo_Capacity_kg'⁠, regression analysis was employed. Three machine learning algorithms were implemented:
+To predict the continuous target variable ⁠`Cargo_Capacity_kg`⁠, regression analysis was employed. Three machine learning algorithms were implemented:
 
 1.⁠ ⁠**Linear Regression**:
    - A baseline model chosen for its simplicity and interpretability.
